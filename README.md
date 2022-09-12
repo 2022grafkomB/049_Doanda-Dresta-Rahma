@@ -3,4 +3,10 @@
 # Doanda Dresta Rahma 
 # 5025201049
 
-![render](img/renderimage.png?raw=true "render")
+## Tugas Individu 1
+
+![tugas1](tugas-1/img/renderimage.png?raw=true "tugas1")
+
+## Tugas Individu 2
+
+![tugas2](tugas-2/img/3d-inisial.jpg?raw=true "tugas2")

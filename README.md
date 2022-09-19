@@ -3,11 +3,19 @@
 # Doanda Dresta Rahma 
 # 5025201049
 
-## Tugas Individu 1
+## Tugas Individu 1 - Obyek Sederhana WebGL
 
 ![tugas1](tugas-1/img/renderimage.png?raw=true "tugas1")
 
-## Tugas Individu 2
+## Tugas Individu 2 - Inisial Nama 3D
 Huruf D terdiri dari 24 rectangle atau 48 triangle (6 rectangle sisi depan, 6 belakang, 12 sisi).
-https://webgl-3d-initial-d.netlify.app/
+https://webgl-3d-initial-d.netlify.app/ \
+
 ![tugas2](tugas-2/img/3d-inisial.jpg?raw=true "tugas2")
+
+## Tugas Individu 3 - 3D Lathe
+https://doanda37rahma.github.io/webgl-lathe \
+
+![tugas3](tugas-3/img/pawn.jpg?raw=true "tugas3")
+
+

@@ -25,7 +25,7 @@ function main() {
     capEnd: true,
     triangles: true,
     maxAngle: degToRad(30),
-    mode: 0,
+    mode: 1,
   };
 
   function generateMesh(bufferInfo) {

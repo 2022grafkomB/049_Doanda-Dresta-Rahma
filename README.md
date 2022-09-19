@@ -8,5 +8,6 @@
 ![tugas1](tugas-1/img/renderimage.png?raw=true "tugas1")
 
 ## Tugas Individu 2
-
+Huruf D terdiri dari 24 rectangle atau 48 triangle (6 rectangle sisi depan, 6 belakang, 12 sisi).
+https://webgl-3d-initial-d.netlify.app/
 ![tugas2](tugas-2/img/3d-inisial.jpg?raw=true "tugas2")

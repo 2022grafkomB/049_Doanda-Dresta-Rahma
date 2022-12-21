@@ -1,0 +1,50 @@
+
+body {
+    margin: 0;
+    padding: 3rem;
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a {
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    display: block;
+    min-width: 4rem;
+    min-height: 4rem;
+}
+
+.item {
+    width: 20rem;
+    min-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-con {
+    width: 100%;
+    height: 100%;
+}   
+
+.img-con img {
+    width:100%; 
+    height:100%;
+    object-fit: cover;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+
+
+
+

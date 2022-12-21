@@ -46,6 +46,9 @@ function main() {
   var rotation = [degToRad(17), degToRad(33), degToRad(4)];
   var scale = [2, 2, 2];
   var fudgeFactor = 0;
+  var isRotating = false;
+  var rotationSpeed = 1.2;
+  var then = 0;
 
   drawScene();
 
@@ -158,6 +161,94 @@ function main() {
     var offset = 0;
     var count = 24 * 6;
     gl.drawArrays(primitiveType, offset, count);
+  }
+
+  var rotateBtn = document.getElementById("rotateButton");
+  rotateBtn.addEventListener("click", rotateD);
+  
+  function rotateD() {
+    isRotating = !(isRotating);
+    requestAnimationFrame(drawSceneRotate);
+  }
+  
+  
+  
+  function drawSceneRotate(now) {
+
+    // if (isRotating ==)
+    if (isRotating == false) {
+      requestAnimationFrame(drawScene);
+      return
+    }
+  
+    now *= 0.001;
+    // // Subtract the previous time from the current time
+    var deltaTime = now - then;
+    // // Remember the current time for the next frame.
+    then = now;
+  
+    // Every frame increase the rotation a little.
+    rotation[1] += rotationSpeed * deltaTime;
+    webglUtils.resizeCanvasToDisplaySize(gl.canvas);
+  
+    // Tell WebGL how to convert from clip space to pixels
+    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+  
+    // Clear the canvas.
+    gl.clear(gl.COLOR_BUFFER_BIT);
+  
+    // Tell it to use our program (pair of shaders)
+    gl.useProgram(program);
+  
+    // Turn on the position attribute
+    gl.enableVertexAttribArray(positionLocation);
+  
+    // Bind the position buffer.
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  
+    // Tell the position attribute how to get data out of positionBuffer (ARRAY_BUFFER)
+    var size = 3;          // 3 components per iteration
+    var type = gl.FLOAT;   // the data is 32bit floats
+    var normalize = false; // don't normalize the data
+    var stride = 0;        // 0 = move forward size * sizeof(type) each iteration to get the next position
+    var offset = 0;        // start at the beginning of the buffer
+    gl.vertexAttribPointer(
+      positionLocation, size, type, normalize, stride, offset);
+  
+    // Turn on the color attribute
+    gl.enableVertexAttribArray(colorLocation);
+  
+    // Bind the color buffer.
+    gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+  
+    // Tell the attribute how to get data out of colorBuffer (ARRAY_BUFFER)
+    var size = 3;                 // 3 components per iteration
+    var type = gl.UNSIGNED_BYTE;  // the data is 8bit unsigned values
+    var normalize = true;         // normalize the data (convert from 0-255 to 0-1)
+    var stride = 0;               // 0 = move forward size * sizeof(type) each iteration to get the next position
+    var offset = 0;               // start at the beginning of the buffer
+    gl.vertexAttribPointer(
+      colorLocation, size, type, normalize, stride, offset);
+  
+    // Compute the matrices
+    var matrix = m4.projection(gl.canvas.clientWidth, gl.canvas.clientHeight, 400);
+    matrix = m4.translate(matrix, translation[0], translation[1], translation[2]);
+    matrix = m4.xRotate(matrix, rotation[0]);
+    matrix = m4.yRotate(matrix, rotation[1]);
+    matrix = m4.zRotate(matrix, rotation[2]);
+    matrix = m4.scale(matrix, scale[0], scale[1], scale[2]);
+  
+    // Set the matrix.
+    gl.uniformMatrix4fv(matrixLocation, false, matrix);
+  
+    // Draw the geometry.
+    var primitiveType = gl.TRIANGLES;
+    var offset = 0;
+    var count = 25 * 6;
+    gl.drawArrays(primitiveType, offset, count);
+  
+    // Call drawScene again next frame
+    requestAnimationFrame(drawSceneRotate);
   }
 }
 
@@ -504,7 +595,7 @@ function setGeometry(gl) {
       gl.STATIC_DRAW);
 }
 
-// Fill the buffer with colors for the 'F'.
+// Fill the buffer with colors for the 'D'.
 function setColors(gl) {
   gl.bufferData(
       gl.ARRAY_BUFFER,
@@ -706,5 +797,12 @@ function setColors(gl) {
         ]),
       gl.STATIC_DRAW);
 }
+
+
+// const rotateBtn = document.getElementById("rotateButton");
+// rotateBtn.addEventListener("click", rotateD());
+
+
+
 
 main();

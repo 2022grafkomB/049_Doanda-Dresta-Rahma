@@ -147,7 +147,7 @@ function main() {
     gl.vertexAttribPointer(
         colorLocation, size, type, normalize, stride, offset);
 
-    var numFs = 5;
+    var numD = 4;
     var radius = 180;
 
     // Compute the matrix
@@ -182,8 +182,8 @@ function main() {
     // Compute a view projection matrix
     var viewProjectionMatrix = m4.multiply(projectionMatrix, viewMatrix);
 
-    for (var ii = 0; ii < numFs; ++ii) {
-        var angle = ii * Math.PI * 2 / numFs;
+    for (var ii = 0; ii < numD; ++ii) {
+        var angle = ii * Math.PI * 2 / numD;
         var x = Math.cos(angle) * radius;
         var y = Math.sin(angle) * radius;
   

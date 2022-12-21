@@ -2,20 +2,31 @@
 
 # Doanda Dresta Rahma 
 # 5025201049
+## https://grafkom-individu.netlify.app/
 
-## Tugas Individu 1 - Obyek Sederhana WebGL
+### Tugas 1 - Obyek Sederhana WebGL
+![1](/img/1.png)
+### Tugas 2 - Inisial Nama 3D
+![2](/gif/2.gif)
+### Tugas 3 - 3D Lathe
+![3-1](/img/3-lathe.jpg)
+### Tugas 3 - Texture
+![3-2](/gif/3-tex.gif)
+### Tugas 3 - Load Obj
+![3-3](/gif/3-obj.gif)
+### Tugas 4 - Camera Perspective Projection
+![4-1](/gif/4-camera.gif)
+### Tugas 4 - Directional Lighting
+![4-2](/gif/4-dir.gif)
+### Tugas 4 - Point Lighting
+![4-3](/gif/4-point.gif)
+### Tugas 4 - Spot Lighting 
+![4-4](/gif/4-spot.gif)
+### Tugas 5 - ThreeJS 3D Object (Geometry, Material, Lighting, User interaction) 
+![5](/gif/5.gif)
+### Tugas 6 - ThreeJS Panorama
+![6](/gif/6.gif)
 
-![tugas1](tugas-1/img/renderimage.png?raw=true "tugas1")
 
-## Tugas Individu 2 - Inisial Nama 3D
-Huruf D terdiri dari 24 rectangle atau 48 triangle (6 rectangle sisi depan, 6 belakang, 12 sisi).
-https://webgl-3d-initial-d.netlify.app/ 
-
-![tugas2](tugas-2/img/3d-inisial.jpg?raw=true "tugas2")
-
-## Tugas Individu 3 - 3D Lathe
-https://doanda37rahma.github.io/webgl-lathe 
-
-![tugas3](tugas-3/img/pawn.jpg?raw=true "tugas3")
 
 
